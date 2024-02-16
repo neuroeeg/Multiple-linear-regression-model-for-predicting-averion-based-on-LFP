@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Feb 16 10:46:53 2024
-
-@author: User
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,8 +7,6 @@ from sklearn.metrics import mean_absolute_error
 
 # Загрузите датасет из CSV-файла
 data = pd.read_csv(r'D:\Users\User\Documents\file.csv')
-
-# Теперь ваш DataFrame содержит данные с добавленным случайным шумом
 
 # Извлеките данные для предикторов и зависимой переменной
 X = data[['Amy-mPFc', 'Amy-Hipp', 'tetha power']]
