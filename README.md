@@ -14,11 +14,28 @@ Figure 2. (A) Linear correlation plot between actual and predicted values of ave
 
 # Multiple linear regression model construction and validation
 
-File: 5-fold_cross-validation.py
+File: LinearRegression.py
 
 Key steps and components:
 
-1. Library Imports: Essential Python libraries for data manipulation, statistical modeling, and mathematical operations are imported, including pandas for data frames, NumPy for numerical operations, sklearn for machine learning models and metrics, and scipy for scientific computing tasks like correlation calculations.
+1. Import Libraries: Python libraries for data manipulation, visualization, and machine learning are imported. Numpy and pandas are used for data manipulation, matplotlib and seaborn for data visualization, and sklearn for implementing the linear regression model and calculating the mean absolute error (MAE).
+2. Load Dataset: A dataset is loaded from a CSV file into a pandas DataFrame. This dataset contains experimental or observational data with features ('Amy-mPFc', 'Amy-Hipp', 'tetha power') and a target variable ('aversion').
+3. Data Preparation: The code extracts predictor variables (X) and the dependent variable (y) from the dataset. These are used as inputs and outputs for the linear regression model.
+3. Model Training: A LinearRegression model is instantiated and trained using the predictors X and the dependent variable y. The model learns to predict the 'aversion' based on the input features.
+4. Prediction: The trained model is used to predict the 'aversion' values for the given input features. These predicted values are stored in predicted_values.
+5. Error Calculation: The mean absolute error (MAE) is calculated between the actual 'aversion' values and the predicted ones. MAE provides a measure of how off the predictions are on average.
+6. Regression Coefficients: The model's intercept and coefficients are retrieved. These values indicate the impact of each predictor on the dependent variable.
+7. Residual Analysis: The residuals (the difference between actual and predicted values) are calculated. A scatter plot of actual values vs. residuals is created to visually assess the model's performance. Ideally, residuals should be randomly distributed around the horizontal line at 0, indicating no pattern and thus a good model fit.
+8. Advanced Visualization: A more detailed residuals plot is created using Seaborn's jointplot. This plot enhances the visualization with better aesthetics and additional information like the density distribution of residuals and predicted values. This helps in understanding the distribution and relationship between residuals and predicted values.
+9. Data Export: Finally, a DataFrame containing residuals and predicted values is created. This DataFrame can be saved to a CSV file (commented out in the code) for further analysis or reporting.
+
+# 5-fold cross-validation
+
+File: 5-fold_cross-validation.py
+
+This approach, combining cross-validation for robust model evaluation and permutation testing for significance assessment, provides a comprehensive analysis of the predictive power and significance of the relationship between the selected predictors and the dependent variable in the context of multiple linear regression.
+
+1. Library Imports: Python libraries for data manipulation, statistical modeling, and mathematical operations are imported.
 2. Data Loading: The dataset is loaded from a CSV file into a pandas DataFrame. This dataset contains the independent variables ('Amy-mPFc', 'Amy-Hipp', 'tetha power') and the dependent variable ('aversion').
 3. Model Preparation: A linear regression model is prepared for fitting the data. Additionally, parameters for cross-validation (using KFold) and permutation testing are set up.
 4. Cross-Validation and Metrics Calculation: The dataset is divided into training and testing sets multiple times using K-fold cross-validation. For each split, the model is trained on the training set and evaluated on the testing set. Metrics such as Mean Absolute Error (MAE), R-squared, Mean Squared Error (MSE), and Pearson correlation coefficients are calculated to assess model performance.
@@ -26,7 +43,9 @@ Key steps and components:
 6. Final Evaluation and Output: The actual MAE for the original dataset is calculated and compared against the distribution of MAEs from the permutation tests to compute a p-value, indicating the significance of the findings. The mean values of R-squared, MSE, and the correlation coefficient are also calculated and reported to summarize model performance.
 7. Results Reporting: The script prints the actual MAE of the model when applied to the unpermuted data, the mean of the permuted MAE values, a p-value for testing the hypothesis of no association, and average values of R-squared, MSE, and the Pearson correlation coefficient.
 
-This approach, combining cross-validation for robust model evaluation and permutation testing for significance assessment, provides a comprehensive analysis of the predictive power and significance of the relationship between the selected predictors and the dependent variable in the context of multiple linear regression.
+# Plot residuals
+
+File: Residuals.py
 
 # Citation
 
