@@ -12,7 +12,7 @@ Figure 2. (A) Linear correlation plot between actual and predicted values of ave
 
 **Conclusion**: Overall, the data provided insights into how electrical neural activity mediates aversion in response to KOR activation. The results showed that the severity of aversion can be reasonably predicted (r = 0.72±0.02, p = 0.0099) using LFP band power and functional connectivity data.
 
-# Multiple linear regression model construction and validation
+## Multiple linear regression model construction and validation
 
 File: LinearRegression.py
 
@@ -29,7 +29,7 @@ Key steps and components:
 8. Advanced Visualization: A more detailed residuals plot is created using Seaborn's jointplot. This plot enhances the visualization with better aesthetics and additional information like the density distribution of residuals and predicted values. This helps in understanding the distribution and relationship between residuals and predicted values.
 9. Data Export: Finally, a DataFrame containing residuals and predicted values is created. This DataFrame can be saved to a CSV file (commented out in the code) for further analysis or reporting.
 
-# 5-fold cross-validation
+## 5-fold cross-validation
 
 File: 5-fold_cross-validation.py
 
@@ -43,7 +43,7 @@ This approach, combining cross-validation for robust model evaluation and permut
 6. Final Evaluation and Output: The actual MAE for the original dataset is calculated and compared against the distribution of MAEs from the permutation tests to compute a p-value, indicating the significance of the findings. The mean values of R-squared, MSE, and the correlation coefficient are also calculated and reported to summarize model performance.
 7. Results Reporting: The script prints the actual MAE of the model when applied to the unpermuted data, the mean of the permuted MAE values, a p-value for testing the hypothesis of no association, and average values of R-squared, MSE, and the Pearson correlation coefficient.
 
-# Plot residuals
+## Plot residuals
 
 File: Residuals.py
 
