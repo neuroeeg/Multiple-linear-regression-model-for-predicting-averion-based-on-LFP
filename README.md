@@ -16,18 +16,17 @@ Figure 2. (A) Linear correlation plot between actual and predicted values of ave
 
 File: LinearRegression.py
 
-Key steps and components:
+This code performs a multiple linear regression analysis using a dataset loaded from a CSV file, calculates performance metrics for the regression model, visualizes the relationship between actual and predicted values with a scatter plot, and finally prints out the performance metrics. Here's a step-by-step breakdown:
 
-1. Import Libraries: Python libraries for data manipulation, visualization, and machine learning are imported. Numpy and pandas are used for data manipulation, matplotlib and seaborn for data visualization, and sklearn for implementing the linear regression model and calculating the mean absolute error (MAE).
-2. Load Dataset: A dataset is loaded from a CSV file into a pandas DataFrame. This dataset contains experimental or observational data with features ('Amy-mPFc', 'Amy-Hipp', 'tetha power') and a target variable ('aversion').
-3. Data Preparation: The code extracts predictor variables (X) and the dependent variable (y) from the dataset. These are used as inputs and outputs for the linear regression model.
-3. Model Training: A LinearRegression model is instantiated and trained using the predictors X and the dependent variable y. The model learns to predict the 'aversion' based on the input features.
-4. Prediction: The trained model is used to predict the 'aversion' values for the given input features. These predicted values are stored in predicted_values.
-5. Error Calculation: The mean absolute error (MAE) is calculated between the actual 'aversion' values and the predicted ones. MAE provides a measure of how off the predictions are on average.
-6. Regression Coefficients: The model's intercept and coefficients are retrieved. These values indicate the impact of each predictor on the dependent variable.
-7. Residual Analysis: The residuals (the difference between actual and predicted values) are calculated. A scatter plot of actual values vs. residuals is created to visually assess the model's performance. Ideally, residuals should be randomly distributed around the horizontal line at 0, indicating no pattern and thus a good model fit.
-8. Advanced Visualization: A more detailed residuals plot is created using Seaborn's jointplot. This plot enhances the visualization with better aesthetics and additional information like the density distribution of residuals and predicted values. This helps in understanding the distribution and relationship between residuals and predicted values.
-9. Data Export: Finally, a DataFrame containing residuals and predicted values is created. This DataFrame can be saved to a CSV file (commented out in the code) for further analysis or reporting.
+1. Import Libraries: The code starts by importing necessary Python libraries for data manipulation, visualization, and statistical modeling. These include numpy, pandas, matplotlib.pyplot, seaborn, components from sklearn for linear regression and performance metrics, and scipy.stats for statistical functions.
+2. Load Dataset: It loads a dataset from a CSV file located at D:\Users\User\Documents\новый_файл.csv into a pandas DataFrame named data.
+3. Extract Data: The predictor variables (X) are selected as columns ['Amy-mPFc', 'Amy-Hipp', 'tetha power'] and the dependent variable (y) is aversion from the DataFrame.
+4. Model Creation and Training: A multiple linear regression model is instantiated using LinearRegression() from sklearn.linear_model and is trained with the predictor and dependent variables using the fit method.
+5. Prediction: The model then predicts the dependent variable (y) based on the predictor variables (X) and stores the predicted values in predicted_values.
+6. Performance Metrics Calculation: The code calculates mean absolute error (MAE), R-squared (R2) value, mean squared error (MSE), and Pearson correlation coefficient between the actual and predicted values to assess the performance of the regression model.
+7. Visualization: It creates a joint plot using Seaborn's jointplot function to visualize the relationship between the actual and predicted values with a regression line. The plot is customized with specific colors, scatter and line properties, and font sizes. The MAE, R-squared, and Pearson correlation coefficient are annotated on the plot for reference.
+8. Printing Performance Metrics: The code prints the MAE, R-squared, MSE, and Pearson correlation coefficient to the console for quick reference.
+9. Save and Show Plot: Although the code prepares to save the plot as an image file (output_plot.png), the savefig line is commented out, so the plot is not actually saved. Finally, plt.show() is called to display the plot interactively.
 
 ## 5-fold cross-validation
 
@@ -46,6 +45,8 @@ This approach, combining cross-validation for robust model evaluation and permut
 ## Plot residuals
 
 File: Residuals.py
+
+The code creates generates a joint plot using the Seaborn library to visualize the relationship between the predicted values and residuals.
 
 # Citation
 
